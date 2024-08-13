@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f8fc;
+            padding: 20px;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .train {
+            background: linear-gradient(208.18deg, #90cded 9.05%, #6295e0 76.74%);
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 12px;
+            border-radius: 8px;
+            color: white;
+        }
+        .train_name {
+            color: black;
+            padding: 0px;
+            background-color: antiquewhite;
+            height: 10%;
+            width:100%;
+        }
+        .about_train {
+            height: 20%;
+            color: black;
+        }
+     
+        .train_details {
+            
+            padding: 4px;
+            width: 100%;
+        }
+
+        .form-group {
+            margin: 10px 0;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select {
+            padding: 10px;
+            font-size: 1em;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .form-group.inline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .form-group.inline > * {
+            flex: 1;
+            margin: 0 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            background: linear-gradient(208.18deg, #dc9c85 9.05%, #FEDFD4 76.74%);
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #dc9c85;
+        }
+        #ticket-details {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .user-details {
+            margin: 12px;
+            padding: 2px;
+            padding-left:12px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .new {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            color: black;
+        }
+        #food {
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        label[for="seat"] {
+            color: black;
+        }
+        label[for="food"] {
+            color: black;
+        }
+        label[for="name"], label[for="age"], label[for="sex"] {
+            color: black;
+        }
+        .main {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: row;
+        }
+        .right {
+            height: 100%;
+            width: 50%;
+            display:flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+        .left {
+            height: 100%;
+            width: 50%;
+        }
+        .box{
+            color:black;
+            background-color:#b7dff5;
+            width:25%;
+            height: 150px;
+            padding:2px;
+            margin:3px;
+            border:2px solid black;
+            border-radius :3px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Book Your Train Ticket</h2>
+    <div class="train">
+        <div style="border: 1px solid white; border-radius: 8px;" class="train_name">12904 - GOLDEN TEMPLE M</div>
+        <div style="background: linear-gradient(208.18deg, #dc9c85 9.05%, #FEDFD4 76.74%); width: 100%;" class="about_train">04:00 NZM --- 19h 35m --- 23:35 MMCT</div>
+        <div class="new">
+            <div class="days">M T W T F S</div>
+        </div>
+        <div class="main">
+            <!-- Right Div (Text Content) -->
+            <div class="right">
+                <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero harum eos animi incidunt magnam nisi inventore accusantium voluptatem facere odit?</div>
+                <div class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus error officia soluta accusantium assumenda similique aspernatur, voluptatum cupiditate eaque culpa?</div>
+                <div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia tempore officiis eius ea deleniti tempora quae temporibus sit mollitia delectus.</div>
+                <div class="box">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus ea omnis veniam illum natus quaerat blanditiis repellat laboriosam dicta? Quo!</div>
+            </div>
+            <!-- Left Div (Form) -->
+            <div class="left">
+                <form id="booking-form" action="/" method="POST">
+                    <div class="train_details">
+                        <div class="form-group inline">
+                            <div>
+                                <label for="seat">Select Seat</label>
+                                <select style="border-radius: 5px; border: 1px solid black;" id="seat" name="seat">
+                                    <option value="Window">Window</option>
+                                    <option value="Aisle">Aisle</option>
+                                    <option value="Middle">Middle</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="food">Select Food</label>
+                                <select id="food" name="food">
+                                    <option value="Vegetarian">Vegetarian</option>
+                                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                                    <option value="Vegan">Vegan</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group inline">
+                        <div class="user-details">
+                            <label for="name">Name</label>
+                            <input style="border-radius: 5px; border: 1px solid black;" type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="user-details">
+                            <label for="age">Age</label>
+                            <input style="border-radius: 5px; border: 1px solid black;" type="number" id="age" name="age" placeholder="Enter your age" required>
+                        </div>
+                        <div class="user-details">
+                            <label for="sex">Sex</label>
+                            <select style="border-radius: 5px;" id="sex" name="sex" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button type="submit">Book Ticket</button>
+                        <a href="view.html"><button type="button">View Ticket</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="ticket-details"></div>
+    </div>
+</div>
+<script src="railway.js"></script>
+</body>
+</html>
